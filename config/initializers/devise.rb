@@ -33,7 +33,12 @@ Devise.setup do |config|
   require 'devise/orm/active_record'
   config.omniauth :google_oauth2,
                   Rails.application.credentials.google[:google_client_id],
-                  Rails.application.credentials.google[:google_client_secret]
+                  Rails.application.credentials.google[:google_client_secret],
+                  {
+                    scope: "https://www.googleapis.com/auth/userinfo.email,
+                            https://www.googleapis.com/auth/userinfo.profile,
+                            https://www.googleapis.com/auth/calendar"
+                  }
 
 
 
