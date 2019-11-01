@@ -18,11 +18,9 @@
           <% end %>
         </h1>
         <nav>
-          <ul class="nav navbar-nav navbar-right nav-fill flex-row">
-            <li><%= link_to "Calendar", root_path, class:"btn btn-primary mx-2"%></li>
-            <% if user_signed_in? %>
-            <li><%= link_to "logout", 'users/log_out', class:"btn btn-primary" %></li>
-            <% end %>
+          <ul class="nav navbar-nav navbar-right">
+            <li><%= link_to "Calendar", root_path %></li>
+            <li><%= link_to_if(user_signed_in?, "logout", '/users/log_out') {}%></li>
           </ul>
         </nav>
       </div>
