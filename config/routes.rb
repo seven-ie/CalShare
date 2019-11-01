@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root to: 'calendars#index'
   get 'calendars/get_events', to: 'calendars#get_events', defaults: {format: :json}
-  get 'home/index'
+  get '/signin',to:'home#index'
   devise_for :users, :controllers => {
     :omniauth_callbacks =>  "users/omniauth_callbacks"
   }
